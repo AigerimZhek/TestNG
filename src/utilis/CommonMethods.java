@@ -1,16 +1,25 @@
 package utilis;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonMethods {
 	
@@ -65,6 +74,12 @@ public class CommonMethods {
 	public static void sendText(WebElement element, String value) {
 		element.clear();
 		element.sendKeys(value);
+		//String returnedTxt = element.getAttribute("value");
+		//if(value.equals(returnedTxt)) {
+			//System.out.println("Text "+value+" is entered");
+		//}else {
+		//	System.out.println("Text "+value+" is not entered");
+		//}
 		
 	}
 
@@ -146,6 +161,89 @@ public class CommonMethods {
 		}catch(NoSuchFrameException e){
 			System.out.println("Frame is not present");
 		}
+	}
+	
+	public static void RadioButton(WebElement element) {
+		if(element.isEnabled()) {
+			if(!element.isSelected()) {
+				element.click();
+				System.out.println("Element was clicked");
+			}else {
+				System.out.println("The element is already selected");
+			}
+		}else {
+			System.out.println("The element is not enabled");
+		}
+	}
+	
+	public static void checkBox(WebElement element) {
+		if(element.isEnabled()) {
+			element.click();
+			}
+			
+	}
+	
+	public static void verifyEntry(WebElement element, String expValue) {
+		String val = element.getAttribute("value");
+		if(val.equals(expValue)) {
+			System.out.println(expValue+" was entered");
+		}else {
+			System.out.println(expValue+" was not entered");
+		}
+	}
+	
+	/**
+	 * Method that will wait for element to be visible
+	 * 
+	 * @param WebElement element, int time
+	 */
+	public static void waitForElementBeVisible(WebElement element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public static void waitForElementBeVisible(By locator, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	
+	}
+
+	public static void waitForElementBeClickable(WebElement element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	public static void waitForElementBeClickable(By locator, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+	
+	public static void takeScreenShot(String filePath) {
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File scr = ts.getScreenshotAs(OutputType.FILE);
+		
+		try {
+			FileUtils.copyFile(scr, new File("ScreenShots/"+filePath+".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("Screen was not taken");
+		}
+	}
+	
+	public static void scrollDown(int pixels) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,"+pixels+")");
+	}
+	
+	public static void scrollUp(int pixels) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,-"+pixels+")");
+	}
+	
+	public static void jsClick(WebElement element) {
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", element);
 	}
 
 }

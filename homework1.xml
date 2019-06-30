@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ 
+  <parameter name="browser" value="chrome"/>
+  <parameter name="url" value="http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx"/>
+  <parameter name="user" value="Tester"/>
+  <parameter name="pass" value="test"/>
+  <parameter name="name" value= "Stephen King"/>
+  <parameter name="address" value="123 Newbrook Drive"/>
+  <parameter name="city" value="Chantilly"/>
+  <parameter name="state" value="VA"/>
+  <parameter name="zip" value="20585"/>
+  <parameter name="cardNum" value="12547952145"/>
+  <parameter name="expDate" value="07/23"/>
+  <parameter name="newState" value="CA"/>
+   <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.class04.HomeWork"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

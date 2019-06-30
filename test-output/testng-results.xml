@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30" started-at="2019-05-30T16:09:32Z" finished-at="2019-05-30T16:09:32Z">
+  <suite name="Suite" duration-ms="11627" started-at="2019-06-12T01:43:15Z" finished-at="2019-06-12T01:43:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30" started-at="2019-05-30T16:09:32Z" finished-at="2019-05-30T16:09:32Z">
-      <class name="com.class01.test">
-        <test-method status="PASS" signature="TestDemo()[pri:0, instance:com.class01.test@5d5eef3d]" name="TestDemo" duration-ms="8" started-at="2019-05-30T16:09:32Z" finished-at="2019-05-30T16:09:32Z">
+    <test name="Test1" duration-ms="7171" started-at="2019-06-12T01:43:15Z" finished-at="2019-06-12T01:43:22Z">
+      <class name="com.class05.demoTest">
+        <test-method status="PASS" signature="testCrossBrowser(java.lang.String)[pri:0, instance:com.class05.demoTest@7823a2f9]" name="testCrossBrowser" duration-ms="7151" started-at="2019-06-12T01:43:15Z" finished-at="2019-06-12T01:43:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestDemo -->
-      </class> <!-- com.class01.test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- testCrossBrowser -->
+      </class> <!-- com.class05.demoTest -->
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="11627" started-at="2019-06-12T01:43:15Z" finished-at="2019-06-12T01:43:27Z">
+      <class name="com.class05.demoTest">
+        <test-method status="PASS" signature="testCrossBrowser(java.lang.String)[pri:0, instance:com.class05.demoTest@77caeb3e]" name="testCrossBrowser" duration-ms="11611" started-at="2019-06-12T01:43:15Z" finished-at="2019-06-12T01:43:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCrossBrowser -->
+      </class> <!-- com.class05.demoTest -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Suite -->
 </testng-results>
