@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <test thread-count="5" name="ChromeTest(failed)" parallel="tests">
-    <parameter name="pass" value="test"/>
-    <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx?"/>
-    <parameter name="username" value="Tester"/>
-    <classes>
-      <class name="com.class05.TC1">
-        <methods>
-          <include name="userTest"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.class05.TC1 -->
-    </classes>
-  </test> <!-- ChromeTest(failed) -->
-  <test thread-count="5" name="FirefoxTest(failed)" parallel="tests">
-    <parameter name="pass" value="test"/>
+  <test thread-count="5" name="Test2(failed)" parallel="tests">
     <parameter name="browser" value="firefox"/>
-    <parameter name="url" value="http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx?"/>
-    <parameter name="username" value="Tester"/>
     <classes>
-      <class name="com.class05.TC1">
+      <class name="com.class05.demoTest">
         <methods>
-          <include name="userTest" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="testCrossBrowser" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.class05.TC1 -->
+      </class> <!-- com.class05.demoTest -->
     </classes>
-  </test> <!-- FirefoxTest(failed) -->
+  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

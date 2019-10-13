@@ -5,7 +5,7 @@
     <classes>
       <class name="com.class05.TC1">
         <methods>
-          <include name="user"/>
+          <include name="userTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
